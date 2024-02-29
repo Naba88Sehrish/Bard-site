@@ -1,0 +1,17 @@
+export const baseUrl = 'https://vpnglobalnet.net/api/';
+export const register = 'register';
+export const login = 'login';
+export const verify_email = 'verify-top';
+export const verify_forgot_otp = 'verify-reset-code';
+export const reset = 'reset-password';
+export const profile = 'profile';
+export const forgot = 'request-reset-code';
+export const resend_otp = 'resend-otp';
+export const plans = 'plans';
+export const Ip_Info = 'get-ip-info';
+export const Site_Info = 'get-site-info';
+export const VPN_Servers = 'get-vpn-servers';
+export const CreateTicket = 'create-ticket';
+export const AllTicket = 'get-all-tickets';
+export const GetTicket = 'get-ticket/';
+export const ReplyTicket = 'reply/';

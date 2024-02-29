@@ -1,0 +1,286 @@
+/* Importing base, components, and utilities fromwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Defining custom fonts */
+@font-face {
+    font-family: Manrope;
+    src: url('../public/Assets/fonts/Manrope.ttf');
+}
+
+@font-face {
+    font-family: SF-Pro;
+    src: url('../public/Assets/fonts/SF-Pro.ttf');
+}
+
+/* Defining theme colors and background */
+:root {
+    --theme-background: #F8FAFC;
+    --theme-red: #CC1919;
+}
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+    height: 0.45rem;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--theme-red);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:#CC1919;
+}
+
+/* Setting body styles */
+body {
+    background-color: var(--theme-background);
+   
+}
+
+.theme-bg {
+    background-color: var(--theme-background);
+}
+
+.container {
+    margin: auto;
+    width: 90%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Setting heading styles */
+h1 {
+    font-family: SF-Pro;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: Manrope;
+}
+
+/* Creating a background gradient effect */
+.border-gradient {
+    background-image: linear-gradient(#CC1919, #06030e 90%);
+}
+
+/* Responsive font size */
+@media screen and (max-width:1024px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+/* Prevent auto-fill styles */
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    z-index: -1;
+}
+
+input:-webkit-autofill::first-line {
+    font-family: inherit;
+    
+}
+
+/* Capitalize the first letter of each word */
+.first-word::first-letter {
+    text-transform: uppercase;
+}
+
+/* Customize radio button appearance */
+[type=radio]:checked,
+[type=radio]:checked {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%2332230D' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='3'/%3E%3C/svg%3E");
+    background-size: 1.7rem 1.7rem;
+}
+
+[type=checkbox]:checked,
+[type=radio]:checked,
+[type=checkbox]:checked,
+[type=radio]:checked {
+    background-color: currentColor;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+/* Customize radio button style */
+[type=radio] {
+    --tw-shadow: 0 0 #0000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-origin: border-box;
+    border-color: #4F4D52;
+    border-width: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+    height: 1.2rem;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    width: 1.2rem;
+    border-radius: 999px;
+}
+
+/* Add hover effect to download button */
+.download-hover {
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.download-hover:hover {
+    background-color: #CC1919;
+    color: #32230D;
+}
+
+.download-hover:hover path {
+    fill: #32230D;
+}
+
+.rotate-center {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+}
+
+.slide-left {
+    -webkit-animation: slide-left 0.5s ease-in-out both;
+    animation: slide-left 0.5s ease-in-out both;
+}
+
+.scale-in-center {
+    -webkit-animation: scale-in-center 0.5s ease-in-out both;
+    animation: scale-in-center 0.5s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(-6.25rem);
+        transform: translateX(-6.25rem);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(-6.25rem);
+        transform: translateX(-6.25rem);
+    }
+}
+
+@-webkit-keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.btn-animation {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-animation::after,
+.btn-animation::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition-duration: 0.25s;
+}
+
+.btn-animation::after {
+    background-color: #040209;
+    opacity: 0.2;
+    left: 100%;
+}
+
+.btn-animation::before {
+    background-color: #040209;
+    opacity: 0.2;
+    right: 100%;
+}
+
+.btn-animation:hover::after {
+    left: 50%;
+}
+
+.btn-animation:hover::before {
+    right: 50%;
+}
