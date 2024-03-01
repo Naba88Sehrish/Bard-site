@@ -12,7 +12,7 @@ const OnlinePresence = () => {
                     <h2 className='uppercase text-sm'>Protect Your Online Presence with </h2>
                     <FlexCol className={'gap-4'}>
                         <h2 className='font-extrabold text-[2.5rem] leading-[1.2]'>
-                            <span className='text-[#FACA7F]'>
+                            <span className='text-[#CC1919]'>
                                 Octo Vault
                             </span>
                             <span>- The Blazing Fast, Uninterrupted and Secure VPN Service</span>

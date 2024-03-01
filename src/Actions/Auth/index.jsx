@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { Ip_Info, baseUrl, forgot, login, profile, register, resend_otp, reset, verify_email, verify_forgot_otp } from "../Constants"
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";

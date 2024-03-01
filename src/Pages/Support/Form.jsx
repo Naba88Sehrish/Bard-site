@@ -67,7 +67,7 @@ return (
       <div style={{ width: '100%', textAlign: 'center' }}>
         
         {submitted ? (
-          <p className='font-semibold text-lg text-[#FACA7F]'>{popupMessage}</p>
+          <p className='font-semibold text-lg text-[#CC1919]'>{popupMessage}</p>
         ) : (
           <form onSubmit={handleSubmit}>
             <div style={{ padding:'20px' }}>

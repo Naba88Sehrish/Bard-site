@@ -40,12 +40,9 @@ const Header = () => {
 
 
   return (
-    <header>
-      <topbar>
-        
-      </topbar> 
-      <navbar className='sticky top-0'>
-        <div className="container pt-4 pb-6">
+    <header>       
+      <navbar className='sticky top-0' >
+        <div className="container  pt-4 pb-6">
           <div className={'grid lg:grid-cols-3 grid-cols-2 gap-5'}>
             <div>
               
@@ -84,8 +81,8 @@ const Header = () => {
                     </div>
                   </> :
                     <Form.Button onClick={() => {
-                      naviagte("/Price")
-                    }} text={'Order VPN'} />
+                      naviagte("/login")
+                    }} text={'Log in'} />
               }
             </FlexRow>
 
