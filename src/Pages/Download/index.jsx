@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from '../../Components/Common/Banner'
 import Platform from './Platform'
-
+import apps from './apps.json'
 import Layout from '../../Components/Layout'
 
 
@@ -13,7 +13,7 @@ const Download = () => {
     return (
         <Layout>
             <Banner
-                img={'/Assets/Images/Hero-image-opt 1.png'}
+                 animationData={apps}
                 data={
                     <>
                         <h2 className='font-extrabold md:text-[3rem] text-[2.2rem] leading-[1.2]'>

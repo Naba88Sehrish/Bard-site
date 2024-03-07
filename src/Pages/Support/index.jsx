@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../Components/Layout'
 
 import Contact from '../../Components/Common/Contact'
-import Form from './Form';
+import ContactForm from './Form';
 
 const Support = () => {
     
@@ -13,7 +13,7 @@ const Support = () => {
                 
                         <><section className=" items-center text-center justify-center flex flex-col gap-5 h-full p-10">
                             <h2 data-aos="zoom-in" className='font-bold md:text-[3rem] text-[2.2rem] text-[#CC1919] leading-[1.2]'>
-                            Contacts
+                            How can we help you?
                             </h2>
                             <p  className=' text-lg'>
                             Use your preferred method or platform to contact us. Any request can be answered by our team!
@@ -28,7 +28,7 @@ const Support = () => {
                           
                         </>
                     
-              <Form></Form>
+              <ContactForm></ContactForm>
                 
             </Layout>
            

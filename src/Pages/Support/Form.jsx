@@ -1,128 +1,54 @@
-import React, {  useState } from 'react'
-
-const Form = () => {
-const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-  const [popupMessage, setPopupMessage] = useState('');
-
-  const validateForm = () => {
-    let isValid = true;
-    const newErrors = {};
-
-   
-    if (!formData.name.trim()) {
-      newErrors.name = 'Required*';
-      isValid = false;
-    }
-
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email.trim() || !emailRegex.test(formData.email)) {
-      newErrors.email = 'Required*';
-      isValid = false;
-    }
-
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'Required*';
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
+import React from 'react'
+import FlexCol from '../../Components/Layout/FlexCol'
+import Form from '../../Components/Form'
+import useValidations from '../../Components/Form/Validations'
+import { email, text } from '../../Components/Form/Validations/Schema'
+import FlexRow from '../../Components/Layout/FlexRow'
+import Lottie from 'lottie-react'
+import contact from './contact .json'
+const ContactForm = () => { 
       
-      setSubmitted(true);
-      setPopupMessage('Thank you for your submission!');
-      console.log('Form submitted:', formData);
-    } else {
-      setPopupMessage('Please fill in all the required fields.');
+      
+
+
+    const onSubmit = (values) => {
+         "Thank you for your submission!"
     }
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-
-    setErrors({
-      ...errors,
-      [e.target.name]: '', 
-    });
-  };
-return (
-<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh',  }}>
-      <div style={{ width: '100%', textAlign: 'center' }}>
+    const initialValues = { email: "", username: "",text:"" }
+    const validationSchema = { email: email, username: text,text:text ,}
+    const form = useValidations({ onSubmit, validationSchema, initialValues });
+    
+    return (
+       
         
-        {submitted ? (
-          <p className='font-semibold text-lg text-[#CC1919]'>{popupMessage}</p>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <div style={{ padding:'20px' }}>
-        
-              
-              <input 
-             style={{ width: '100%', textAlign: 'center', fontSize:'2rem',backgroundColor:'#D9D9D9',color:"#000", borderRadius:'25px' }}
-
-                type="text"
-                placeholder='    Enter Your Name:'
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                onClick={() => setPopupMessage('')}
-              />
-              {errors.name && <p className="text-[#EE1819]">{errors.name}</p>}
-            </div>
-
-            <div style={{ padding:'20px' }}>
-             
-              <input
-              style={{ width: '100%', textAlign: 'center', fontSize:'2rem',backgroundColor:'#D9D9D9',color:"#000", borderRadius:'25px' }}
-
-               placeholder='     Enter Your Email:'
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                onClick={() => setPopupMessage('')}
-              />
-              {errors.email && <p className="text-[#EE1819]">{errors.email}</p>}
-            </div>
-
-            <div style={{ padding:'20px' }}>
-            
-
-              <textarea
-              style={{ width: '100%', textAlign: 'center', fontSize:'2rem',backgroundColor:'#D9D9D9',color:"#000", borderRadius:'25px',  }}
-              placeholder='     Type message here:'
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                onClick={() => setPopupMessage('')}
-              />
-              {errors.message && <p className="text-[#EE1819] ">{errors.message}</p>}
-            </div>
-
-            <button className='btn-animation' style={{ width: '40%', textAlign: 'center', fontSize:'2rem',backgroundColor:'#CC1919', borderRadius:'25px', color:'#fff' }} type="submit">Submit</button>
-          </form>
-        )}
-      </div>
-    </div>)
+        <FlexRow className=' items-center justify-between p-20'>
+        <div className=' items-center justify-center mr-20'>
+        <Lottie animationData={contact } />
+        </div>
+        <div
+    className="bg-white  items-center justify-between p-10 mt-10 "
+    style={{ width: '400px', height: '550px', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)', }}
+>
+            <form onSubmit={form.handleSubmit}>
+                <FlexCol className='gap-[3rem] text-center'>
+                    <FlexCol>
+                        <h1 className='text-[1.6rem] font-semibold'>Contact us!</h1>
+                        <h1 className='text-[#CC1919] text-sm'>We happy to see you again.</h1>
+                    </FlexCol>
+                    <FlexCol className={'gap-4'}>
+                        <Form.Input form={form} name='email' placeholder={'Email'} />
+                        <Form.Input form={form} name='username' type={'text'} placeholder={'Username'} />
+                        <Form.Textarea form={form} name='text' type={'text'} placeholder={'Type Your message here'} />
+                        
+                    </FlexCol>
+                    <FlexCol>
+                        <Form.Button  type={'submit'} >Submit</Form.Button>
+                       
+                    </FlexCol>
+                </FlexCol>
+            </form></div></FlexRow>
+     
+    )
 }
 
-export default Form
+export default ContactForm

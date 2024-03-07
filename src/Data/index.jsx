@@ -24,15 +24,15 @@ export const PlatformData = [
     {
         title: "Andriod",
         link: "/",
-        img: "devicon_android.png"
+        img: "Android .png"
     }, {
         title: "IOS",
         link: "/App",
-        img: "ri_apple-fill.png"
+        img: "ios.png"
     }, {
         title: "Macbook",
         link: "/App",
-        img: "twemoji_laptop.png"
+        img: "mac.png"
     }, {
         title: "Windows",
         link: "/App",

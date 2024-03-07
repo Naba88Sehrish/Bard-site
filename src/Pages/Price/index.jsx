@@ -2,11 +2,14 @@ import React from 'react'
 import Layout from '../../Components/Layout'
 import Banner from '../../Components/Common/Banner'
 import Pricing from '../../Pages/Home/Pricing.jsx'
+
+import price from './price.json'
 const Price = () => {
     return (
         <Layout>
             <Banner
-                img={'/Assets/Images/secure-img.png'}
+            animationData={price}
+               
                 data={
                     <>
                         <h2 className='font-extrabold md:text-[3rem] text-[2.2rem] leading-[1.2]'>

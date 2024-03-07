@@ -20,25 +20,6 @@
     --theme-red: #CC1919;
 }
 
-::-webkit-scrollbar {
-    width: 0.75rem;
-    height: 0.45rem;
-}
-
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--theme-red);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background:#CC1919;
-}
-
 /* Setting body styles */
 body {
     background-color: var(--theme-background);
