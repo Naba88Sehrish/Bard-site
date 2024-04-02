@@ -2,8 +2,8 @@ import React from 'react'
 import Pricing from './Pricing.jsx'
 import FlexCol from '../../Components/Layout/FlexCol'
 import Banner from '../../Components/Common/Banner'
-import Lottie from 'lottie-react'
-import freebg from './freebg.json'
+
+
 import freetrail from './freetrail.json'
 const Global = () => {
     return (
@@ -35,9 +35,7 @@ Optimize your connection speed by selecting a server strategically located for p
                     </div>
                    
                 </FlexCol>
-                <div className="absolute inset-0 z-0 ">
-                <Lottie animationData={freebg} />
-            </div>
+                
             </div>
            
             <div >
